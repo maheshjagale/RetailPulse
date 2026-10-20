@@ -284,7 +284,7 @@ with st.sidebar:
         "NAVIGATION",
         [
             "📊 Executive KPI Dashboard",
-            "📈 Demand Forecasting & What-If",
+            "📈 Demand Forecasting",
             "👥 Customer Segmentation",
             "⚠️ Churn Risk Scanner",
             "📦 Inventory Optimization",
@@ -438,26 +438,17 @@ if page == "📊 Executive KPI Dashboard":
 
 
 # -------------------------------------------------------------
-# PAGE 2: DEMAND FORECASTING & WHAT-IF
+# PAGE 2: DEMAND FORECASTING
 # -------------------------------------------------------------
-elif page == "📈 Demand Forecasting & What-If":
-    st.markdown("<h1 class='hero-title'>Demand Forecasting & What-If Simulator</h1>", unsafe_allow_html=True)
+elif page == "📈 Demand Forecasting":
+    st.markdown("<h1 class='hero-title'>Demand Forecasting </h1>", unsafe_allow_html=True)
     st.markdown("<p class='hero-subtitle'>Two-stage residual ensemble (Facebook Prophet + XGBoost) delivering 30-day forward demand projections with promotional shock simulation.</p>", unsafe_allow_html=True)
 
     fc_df = get_cached_forecast()
 
-    # Simulator Control Panel
-    with st.container():
-        st.markdown("<div class='panel-title'>🛠️ Interactive Promotional & Holiday What-If Simulator</div>", unsafe_allow_html=True)
-        st.markdown("<div class='panel-subtitle'>Inject demand shocks and promotional uplifts to recalculate forward procurement volumes dynamically.</div>", unsafe_allow_html=True)
-
-        sc1, sc2, sc3 = st.columns([1.2, 1.2, 1])
-        with sc1:
-            promo_lift = st.slider("Promotional Demand Uplift (%)", min_value=0, max_value=60, value=15, step=5, help="Simulate marketing campaign uplift on forward demand.")
-        with sc2:
-            holiday_spike = st.slider("Flash Sale / Holiday Surge (%)", min_value=0, max_value=50, value=10, step=5, help="Simulate holiday spikes or flash discount surges.")
-        with sc3:
-            show_bounds = st.checkbox("Display Confidence Bands (95% CI)", value=True)
+    promo_lift = 15
+    holiday_spike = 10
+    show_bounds = True
 
     multiplier = 1.0 + (promo_lift + holiday_spike) / 100.0
 
