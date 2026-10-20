@@ -1,4 +1,4 @@
-# 📊 RetailPulse – AI-Powered Customer Analytics & Demand Forecasting Platform
+# 📊 RetailPulse – Customer Analytics & Demand Forecasting Platform
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.45+-FF4B4B.svg)](https://streamlit.io)
