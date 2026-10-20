@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # RetailPulse
+=======
+# 📊 RetailPulse – Customer Analytics & Demand Forecasting Platform
+>>>>>>> c90ff00c0a171c93fe5610f62df11523fdb7e5af
 
 RetailPulse is a retail analytics and forecasting project built to turn transaction history into actionable operational intelligence. It combines customer analytics, demand forecasting, churn prediction, and inventory optimization in a single Streamlit app.
 
