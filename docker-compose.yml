@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  retailpulse-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: retailpulse_platform
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data/processed:/app/data/processed
+      - ./models:/app/models
+      - ./reports:/app/reports
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped

@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Large Raw Datasets (protect raw source from accidental commits if > 100MB)
+# data/raw/online_retail_II.xlsx
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs & MLflow
+logs/
+mlruns/
+.mlflow/
+
+# OS artifacts
+.DS_Store
+Thumbs.db

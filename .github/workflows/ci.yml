@@ -1,0 +1,38 @@
+name: RetailPulse CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master, "feature/**" ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest flake8
+
+      - name: Lint Code with Flake8
+        run: |
+          flake8 src/ tests/ config.py app.py --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      - name: Execute PyTest Suite
+        run: |
+          python -m pytest tests/ -v
+
+      - name: Verify PDF Report Compilation
+        run: |
+          python -m src.utils.report_generator
