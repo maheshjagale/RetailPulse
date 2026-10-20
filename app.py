@@ -798,26 +798,13 @@ elif page == "📦 Inventory Optimization":
 
     inv_df = get_cached_inventory()
 
-    # Simulator Controls
-    with st.container():
-        st.markdown("<div class='panel-title'>⚙️ Supplier Lead Time & Service Level Sensitivity Simulator</div>", unsafe_allow_html=True)
-        st.markdown("<div class='panel-subtitle'>Dynamically stress-test lead times and service levels to inspect working capital and reorder thresholds.</div>", unsafe_allow_html=True)
-
-        sc1, sc2, sc3 = st.columns(3)
-        with sc1:
-            lead_time = st.slider("Supplier Lead Time (Days)", 3, 21, config.DEFAULT_LEAD_TIME_DAYS)
-        with sc2:
-            sla = st.selectbox("Target Service Level SLA", [0.90, 0.95, 0.98, 0.99], index=1)
-        with sc3:
-            demand_shock = st.slider("Demand Stress Test Shock (%)", -30, 50, 0, step=10)
-
-    z_map = {0.90: 1.28, 0.95: 1.645, 0.98: 2.05, 0.99: 2.33}
-    opt = InventoryOptimizer(lead_time_days=lead_time, service_level_z=z_map[sla])
+    lead_time = 15
+    service_level_z = config.SERVICE_LEVEL_Z
+    opt = InventoryOptimizer(lead_time_days=lead_time, service_level_z=service_level_z)
     sim_inv = opt.simulate_what_if(
         inv_df,
         lead_time_override=lead_time,
-        service_level_override=z_map[sla],
-        demand_multiplier=(1.0 + demand_shock / 100.0)
+        service_level_override=service_level_z
     )
 
     # Health Metric Cards
