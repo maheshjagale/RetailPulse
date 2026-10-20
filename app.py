@@ -46,20 +46,6 @@ st.markdown("""
     }
 
     /* Header Styling */
-    .hero-badge {
-        display: inline-block;
-        padding: 4px 12px;
-        background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
-        color: #3730A3;
-        border: 1px solid #C7D2FE;
-        border-radius: 9999px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-    }
-    
     .hero-title {
         font-size: 2.1rem;
         font-weight: 800;
@@ -320,7 +306,6 @@ df = get_cached_data()
 # PAGE 1: EXECUTIVE KPI DASHBOARD
 # -------------------------------------------------------------
 if page == "📊 Executive KPI Dashboard":
-    st.markdown("<span class='hero-badge'>Platform Telemetry</span>", unsafe_allow_html=True)
     st.markdown("<h1 class='hero-title'>Executive KPI Dashboard</h1>", unsafe_allow_html=True)
     st.markdown("<p class='hero-subtitle'>Macro retail health, revenue trends, units sold, and geographic market shares across 536,642 transactions.</p>", unsafe_allow_html=True)
 
@@ -456,7 +441,6 @@ if page == "📊 Executive KPI Dashboard":
 # PAGE 2: DEMAND FORECASTING & WHAT-IF
 # -------------------------------------------------------------
 elif page == "📈 Demand Forecasting & What-If":
-    st.markdown("<span class='hero-badge'>Time-Series Machine Learning</span>", unsafe_allow_html=True)
     st.markdown("<h1 class='hero-title'>Demand Forecasting & What-If Simulator</h1>", unsafe_allow_html=True)
     st.markdown("<p class='hero-subtitle'>Two-stage residual ensemble (Facebook Prophet + XGBoost) delivering 30-day forward demand projections with promotional shock simulation.</p>", unsafe_allow_html=True)
 
@@ -585,7 +569,6 @@ elif page == "📈 Demand Forecasting & What-If":
 # PAGE 3: CUSTOMER SEGMENTATION
 # -------------------------------------------------------------
 elif page == "👥 Customer Segmentation":
-    st.markdown("<span class='hero-badge'>Unsupervised Clustering</span>", unsafe_allow_html=True)
     st.markdown("<h1 class='hero-title'>Customer Segmentation & RFM Cohorts</h1>", unsafe_allow_html=True)
     st.markdown("<p class='hero-subtitle'>K-Means clustering on log-normalized Recency, Frequency, and Monetary scores (6 distinct business personas, Silhouette: 0.312).</p>", unsafe_allow_html=True)
 
@@ -687,7 +670,6 @@ elif page == "👥 Customer Segmentation":
 # PAGE 4: CHURN RISK SCANNER
 # -------------------------------------------------------------
 elif page == "⚠️ Churn Risk Scanner":
-    st.markdown("<span class='hero-badge'>Predictive Retention Intelligence</span>", unsafe_allow_html=True)
     st.markdown("<h1 class='hero-title'>Customer Churn Risk Scanner & SHAP</h1>", unsafe_allow_html=True)
     st.markdown("<p class='hero-subtitle'>Production XGBoost classifier (Test AUC-ROC: 0.8803) detecting silent attrition candidates through behavioral cadence modeling.</p>", unsafe_allow_html=True)
 
@@ -820,7 +802,6 @@ elif page == "⚠️ Churn Risk Scanner":
 # PAGE 5: INVENTORY OPTIMIZATION
 # -------------------------------------------------------------
 elif page == "📦 Inventory Optimization":
-    st.markdown("<span class='hero-badge'>Supply Chain Execution</span>", unsafe_allow_html=True)
     st.markdown("<h1 class='hero-title'>Inventory Optimization & Purchase Orders</h1>", unsafe_allow_html=True)
     st.markdown("<p class='hero-subtitle'>Dynamic Safety Stock (SS), Reorder Point (ROP), and Economic Order Quantity (EOQ) cutting stockout risk by 34.5%.</p>", unsafe_allow_html=True)
 
@@ -916,7 +897,6 @@ elif page == "📦 Inventory Optimization":
 # PAGE 6: REPORT - PROJECT OVERVIEW
 # -------------------------------------------------------------
 elif page == "📄 Report":
-    st.markdown("<span class='hero-badge'>Executive Overview</span>", unsafe_allow_html=True)
     st.markdown("<h1 class='hero-title'>Project Overview & Platform Architecture</h1>", unsafe_allow_html=True)
     st.markdown("<p class='hero-subtitle'>Zidio Development Portfolio Deliverable — End-to-end data science and decision intelligence platform.</p>", unsafe_allow_html=True)
 
