@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# RetailPulse
-=======
 # 📊 RetailPulse – Customer Analytics & Demand Forecasting Platform
 >>>>>>> c90ff00c0a171c93fe5610f62df11523fdb7e5af
 
@@ -37,7 +34,6 @@ The project is designed around a retail data pipeline and a dashboard that surfa
 - `data/processed/customer_churn_scored.csv` – customer churn risk scoring output.
 - `data/processed/inventory_recommendations.csv` – inventory health and reorder recommendations.
 - `data/processed/prophet_forecast_results.csv` – forecast outputs for demand modeling.
-- `data/processed/forecast_model_comparison.xlsx` – model comparison exports.
 
 ### Feature engineering and modeling
 - `src/data/load_data.py` – data loading utilities.
